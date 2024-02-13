@@ -1,5 +1,6 @@
 import Post from "../Post/Post.jsx";
 import classes from "./PostList.module.css"
+import NewPost from "../NewPost/NewPost.jsx";
 
 function PostList() {
     const posts = [
@@ -10,7 +11,12 @@ function PostList() {
     const posts_elements = posts.map((post) => (
         <Post author={post.author} body={post.body}/>
     ));
-    return <ul className={classes.post}>{posts_elements}</ul>;
+    return (
+        <>
+            <NewPost/>
+            <ul className={classes.post}>{posts_elements}</ul>
+        </>
+    );
 }
 
 export default PostList
